@@ -14,6 +14,12 @@ project ("game-server-CMake")
 # 将源代码添加到此项目的可执行文件。
 add_executable (game-server-CMake "game-server-CMake.cpp" "game-server-CMake.h")
 
+find_package(spdlog CONFIG REQUIRED)
+target_link_libraries(game-server-CMake PRIVATE spdlog::spdlog)
+
+find_package(unofficial-uwebsockets CONFIG REQUIRED)
+target_link_libraries(game-server-CMake PRIVATE unofficial::uwebsockets::uwebsockets)
+
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET game-server-CMake PROPERTY CXX_STANDARD 20)
 endif()

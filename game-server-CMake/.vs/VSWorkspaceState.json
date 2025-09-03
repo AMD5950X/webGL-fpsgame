@@ -12,8 +12,10 @@
     ]
   },
   "ExpandedNodes": [
-    ""
+    "",
+    "\\out",
+    "\\out\\build"
   ],
-  "SelectedNode": "\\game-server-CMake.cpp",
+  "SelectedNode": "\\CMakeLists.txt",
   "PreviewInSolutionExplorer": false
 }

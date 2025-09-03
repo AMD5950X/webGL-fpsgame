@@ -1,0 +1,104 @@
+﻿// game-server-CMake.cpp: 定义应用程序的入口点。
+//
+
+#include "game-server-CMake.h"
+
+#include <cstdint>
+#include <iostream>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+#include <memory>
+#include <ctime>
+
+// use spdlog for logging
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/basic_file_sink.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+
+// use uwebsockets for websocket server
+#include <uwebsockets/App.h>
+
+struct PerSocketData {
+    // 每个连接的用户数据
+    int64_t id = 0;
+    std::string username;
+    bool authenticated = false;
+};
+
+// 全局用户管理
+std::unordered_map<int64_t, std::string> connected_users;
+int64_t next_user_id = 1;
+
+int main() {
+    using namespace uWS;
+    
+    // 初始化日志
+    spdlog::info("Starting WebSocket game server on port 9001");
+
+    uWS::App().ws<PerSocketData>("/*", {
+        // 打开连接
+        .open = [](auto* ws) {
+            auto* userData = ws->getUserData();
+            userData->id = next_user_id++;
+            userData->username = "User_" + std::to_string(userData->id);
+            userData->authenticated = true;
+            
+            connected_users[userData->id] = userData->username;
+            
+            spdlog::info("Client connected: {} (ID: {})", userData->username, userData->id);
+            
+            // 发送欢迎消息
+            std::string welcome_msg = "{\"type\":\"system\",\"message\":\"Welcome " + userData->username + "!\"}"; 
+            ws->send(welcome_msg, uWS::OpCode::TEXT);
+            
+            // 广播新用户加入
+            std::string join_msg = "{\"type\":\"user_join\",\"username\":\"" + userData->username + "\"}";
+            ws->publish("game_room", join_msg, uWS::OpCode::TEXT);
+            ws->subscribe("game_room");
+        },
+        
+        // 收到消息
+        .message = [](auto* ws, std::string_view message, uWS::OpCode opCode) {
+            auto* userData = ws->getUserData();
+            std::string msg_str(message);
+            
+            spdlog::info("Received message from {}: {}", userData->username, msg_str);
+            
+            // 构造广播消息
+            std::string broadcast_msg = "{\"type\":\"chat\",\"username\":\"" + userData->username + 
+                                      "\",\"message\":\"" + msg_str + "\",\"timestamp\":" + 
+                                      std::to_string(std::time(nullptr)) + "}";
+            
+            // 广播消息给所有订阅的客户端
+            ws->publish("game_room", broadcast_msg, uWS::OpCode::TEXT);
+        },
+        
+        // 当内置缓冲区从满变为空时触发
+        .drain = [](auto* ws) {
+            spdlog::debug("Socket drain event");
+        },
+        
+        // 关闭连接
+        .close = [](auto* ws, int /*code*/, std::string_view /*msg*/) {
+            auto* userData = ws->getUserData();
+            spdlog::info("Client disconnected: {} (ID: {})", userData->username, userData->id);
+            
+            // 移除用户
+            connected_users.erase(userData->id);
+            
+            // 广播用户离开
+            std::string leave_msg = "{\"type\":\"user_leave\",\"username\":\"" + userData->username + "\"}";
+            ws->publish("game_room", leave_msg, uWS::OpCode::TEXT);
+        }
+    }).listen(9001, [](auto* listenSocket) {
+        if (listenSocket) {
+            spdlog::info("WebSocket server listening on port 9001");
+            std::cout << "Game server is running on ws://localhost:9001" << std::endl;
+        } else {
+            spdlog::error("Failed to listen on port 9001");
+        }
+    }).run();
+
+    return 0;
+}

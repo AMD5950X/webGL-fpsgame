@@ -1,41 +1,48 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
-
-const count = ref(0)
-</script>
-
 <template>
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
+  <div>
+    <h2>WebSocket Echo 示例</h2>
+    <div>连接状态: <span :style="{color: connected ? 'green' : 'red'}">{{ connected ? '已连接' : '未连接' }}</span></div>
+    <input v-model="input" placeholder="输入消息" @keyup.enter="sendMsg" />
+    <button @click="sendMsg" :disabled="!connected">发送</button>
+    <div v-if="messages.length">
+      <h3>收到消息:</h3>
+      <ul>
+        <li v-for="(msg, idx) in messages" :key="idx">{{ msg }}</li>
+      </ul>
+    </div>
   </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Learn more about IDE Support for Vue in the
-    <a
-      href="https://vuejs.org/guide/scaling-up/tooling.html#ide-support"
-      target="_blank"
-      >Vue Docs Scaling up Guide</a
-    >.
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
+<script setup >
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const wsUrl = 'ws://localhost:9001'
+const ws = ref(null)
+const connected = ref(false)
+const input = ref('')
+const messages = ref([])
+
+function sendMsg() {
+  if (ws.value && connected.value && input.value) {
+    ws.value.send(input.value)
+    input.value = ''
+  }
 }
-</style>
+
+onMounted(() => {
+  ws.value = new WebSocket(wsUrl)
+  ws.value.onopen = () => {
+    connected.value = true
+  }
+  ws.value.onclose = () => {
+    connected.value = false
+  }
+  ws.value.onmessage = (event) => {
+    messages.value.push(event.data)
+  }
+})
+
+onBeforeUnmount(() => {
+  if (ws.value) ws.value.close()
+})
+</script>
