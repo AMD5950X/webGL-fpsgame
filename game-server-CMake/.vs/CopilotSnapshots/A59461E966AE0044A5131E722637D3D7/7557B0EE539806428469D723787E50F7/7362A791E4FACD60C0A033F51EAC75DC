@@ -1,0 +1,99 @@
+﻿#include "game-server-CMake.h"
+
+#include <cstdint>
+#include <iostream>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+#include <memory>
+#include <ctime>
+#include <chrono>
+
+// spdlog for logging
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/basic_file_sink.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+
+// uWebSockets for websocket server
+#include <uwebsockets/App.h>
+
+struct PerSocketData {
+    int64_t id = 0;
+    std::string username;
+    bool authenticated = false;
+};
+
+static std::unordered_map<int64_t, std::string> connected_users;
+static int64_t next_user_id = 1;
+
+int main() {
+    using namespace uWS;
+
+    spdlog::info("Starting WebSocket game server on port 9001");
+
+    uWS::App().ws<PerSocketData>("/*", {
+        .open = [](auto* ws) {
+            auto* userData = ws->getUserData();
+            userData->id = next_user_id++;
+            userData->username = "User_" + std::to_string(userData->id);
+            userData->authenticated = true;
+
+            connected_users[userData->id] = userData->username;
+
+            spdlog::info("Client connected: {} (ID: {})", userData->username, userData->id);
+
+            std::string welcome_msg = "{\"type\":\"system\",\"message\":\"Welcome " + userData->username + "!\"}";
+            ws->send(welcome_msg, uWS::OpCode::TEXT);
+
+            std::string join_msg = "{\"type\":\"user_join\",\"username\":\"" + userData->username + "\"}";
+            ws->publish("game_room", join_msg, uWS::OpCode::TEXT);
+            ws->subscribe("game_room");
+        },
+
+        .message = [](auto* ws, std::string_view message, uWS::OpCode opCode) {
+            auto* userData = ws->getUserData();
+            std::string msg_str(message);
+
+            // 检查是否是ping消息
+            if (msg_str.find("{\"type\":\"ping\"") == 0) {
+                // 直接返回pong消息，保持原始时间戳
+                std::string pong_msg = msg_str;
+                size_t type_pos = pong_msg.find("\"ping\"");
+                if (type_pos != std::string::npos) {
+                    pong_msg.replace(type_pos, 6, "\"pong\"");
+                }
+                ws->send(pong_msg, uWS::OpCode::TEXT);
+                return;
+            }
+
+            spdlog::info("Received message from {}: {}", userData->username, msg_str);
+
+            std::string broadcast_msg = "{\"type\":\"chat\",\"username\":\"" + userData->username + "\",\"message\":\"" + msg_str + "\",\"timestamp\":" + std::to_string(std::time(nullptr)) + "}";
+
+            ws->publish("game_room", broadcast_msg, uWS::OpCode::TEXT);
+        },
+
+        .drain = [](auto* ws) {
+            spdlog::debug("Socket drain event");
+        },
+
+        .close = [](auto* ws, int /*code*/, std::string_view /*msg*/) {
+            auto* userData = ws->getUserData();
+            spdlog::info("Client disconnected: {} (ID: {})", userData->username, userData->id);
+
+            connected_users.erase(userData->id);
+
+            std::string leave_msg = "{\"type\":\"user_leave\",\"username\":\"" + userData->username + "\"}";
+            ws->publish("game_room", leave_msg, uWS::OpCode::TEXT);
+        }
+    }).listen(9001, [](auto* listenSocket) {
+        if (listenSocket) {
+            spdlog::info("WebSocket server listening on port 9001");
+            std::cout << "Game server is running on ws://localhost:9001" << std::endl;
+        } else {
+            spdlog::error("Failed to listen on port 9001");
+        }
+    }).run();
+
+    return 0;
+}

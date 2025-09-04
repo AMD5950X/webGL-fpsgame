@@ -4,6 +4,12 @@
       <div :class="['status-indicator', connectionStatus]">
         {{ connectionStatusText }}
       </div>
+      <div v-if="isConnected" class="ping-display">
+        <span class="ping-label">延迟:</span>
+        <span :class="['ping-value', getPingClass(latency)]">
+          {{ latency !== null ? latency + 'ms' : '检测中...' }}
+        </span>
+      </div>
     </div>
     
     <div class="chat-container">
@@ -67,6 +73,11 @@ const messages = ref<Array<{
 const messagesContainer = ref<HTMLElement>()
 let messageId = 0
 
+// 延迟检测相关
+const latency = ref<number | null>(null)
+const pingInterval = ref<number | null>(null)
+const pendingPings = new Map<string, number>()
+
 // 连接状态
 const connectionStatus = ref<'connecting' | 'connected' | 'disconnected'>('disconnected')
 
@@ -78,7 +89,71 @@ const connectionStatusText = computed(() => {
   }
 })
 
-// WebSocket 连接
+// 获取延迟颜色类名
+const getPingClass = (ping: number | null): string => {
+  if (ping === null) return 'ping-unknown'
+  if (ping < 50) return 'ping-excellent'
+  if (ping < 100) return 'ping-good'
+  if (ping < 200) return 'ping-fair'
+  return 'ping-poor'
+}
+
+// 延迟检测方法
+const startPingTest = () => {
+  if (pingInterval.value) {
+    clearInterval(pingInterval.value)
+  }
+  
+  const sendPing = () => {
+    if (socket.value && isConnected.value) {
+      const pingId = Date.now().toString()
+      const timestamp = Date.now()
+      pendingPings.set(pingId, timestamp)
+      
+      const pingMessage = JSON.stringify({
+        type: 'ping',
+        id: pingId,
+        timestamp: timestamp
+      })
+      
+      socket.value.send(pingMessage)
+      
+      // 超时清理
+      setTimeout(() => {
+        if (pendingPings.has(pingId)) {
+          pendingPings.delete(pingId)
+        }
+      }, 5000)
+    }
+  }
+  
+  // 立即发送一次ping
+  sendPing()
+  
+  // 每2秒发送一次ping
+  pingInterval.value = setInterval(sendPing, 2000)
+}
+
+const stopPingTest = () => {
+  if (pingInterval.value) {
+    clearInterval(pingInterval.value)
+    pingInterval.value = null
+  }
+  pendingPings.clear()
+  latency.value = null
+}
+
+const handlePongMessage = (data: any) => {
+  const pingId = data.id
+  const originalTimestamp = pendingPings.get(pingId)
+  
+  if (originalTimestamp) {
+    const currentTime = Date.now()
+    const rtt = currentTime - originalTimestamp
+    latency.value = rtt
+    pendingPings.delete(pingId)
+  }
+}
 const connectWebSocket = () => {
   try {
     connectionStatus.value = 'connecting'
@@ -89,6 +164,8 @@ const connectWebSocket = () => {
       connectionStatus.value = 'connected'
       console.log('WebSocket连接已建立')
       addSystemMessage('已连接到游戏服务器')
+      // 开始延迟检测
+      startPingTest()
     }
     
     socket.value.onmessage = (event) => {
@@ -106,6 +183,8 @@ const connectWebSocket = () => {
       connectionStatus.value = 'disconnected'
       console.log('WebSocket连接已断开')
       addSystemMessage('与服务器连接断开')
+      // 停止延迟检测
+      stopPingTest()
       
       // 自动重连
       setTimeout(() => {
@@ -139,6 +218,9 @@ const handleMessage = (data: any) => {
       break
     case 'user_leave':
       addSystemMessage(`${data.username} 离开了聊天室`)
+      break
+    case 'pong':
+      handlePongMessage(data)
       break
     default:
       console.log('未知消息类型:', data)
@@ -200,6 +282,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  stopPingTest()
   if (socket.value) {
     socket.value.close()
   }
@@ -223,6 +306,53 @@ onUnmounted(() => {
   padding: 0.5rem 1rem;
   background: #f8f9fa;
   border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ping-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.ping-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.ping-value {
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.ping-excellent {
+  background: #d4edda;
+  color: #155724;
+}
+
+.ping-good {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.ping-fair {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.ping-poor {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.ping-unknown {
+  background: #e2e3e5;
+  color: #6c757d;
 }
 
 .status-indicator {
