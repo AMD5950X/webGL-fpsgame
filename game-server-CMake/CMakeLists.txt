@@ -11,6 +11,8 @@ endif()
 
 project ("game-server-CMake")
 
+include(\\root\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake)
+
 # 将源代码添加到此项目的可执行文件。
 add_executable (game-server-CMake "game-server-CMake.cpp" "game-server-CMake.h")
 

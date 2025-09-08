@@ -157,7 +157,7 @@ const handlePongMessage = (data: any) => {
 const connectWebSocket = () => {
   try {
     connectionStatus.value = 'connecting'
-    socket.value = new WebSocket('ws://localhost:9001')
+    socket.value = new WebSocket('ws://47.76.122.60:9001')
     
     socket.value.onopen = () => {
       isConnected.value = true

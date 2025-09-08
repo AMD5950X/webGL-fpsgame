@@ -109,26 +109,22 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-ji3uyb"
-      binary: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-ji3uyb"
+      source: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-14jada"
+      binary: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-14jada"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
       CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>"
-      VCPKG_INSTALLED_DIR: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/vcpkg_installed"
-      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
-      VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "D:/vcpkg/vcpkg"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-ji3uyb'
+        Change Dir: 'D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-14jada'
         
-        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_37c89
-        [1/2] "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe"  /nologo   /DWIN32 /D_WINDOWS /W3  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_37c89.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_37c89.dir\\ /FS -c "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_37c89.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_37c89.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_37c89.exe /implib:cmTC_37c89.lib /pdb:cmTC_37c89.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_72597
+        [1/2] "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe"  /nologo   /DWIN32 /D_WINDOWS /W3  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_72597.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_72597.dir\\ /FS -c "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_72597.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_72597.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_72597.exe /implib:cmTC_72597.lib /pdb:cmTC_72597.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -156,27 +152,23 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-nge39m"
-      binary: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-nge39m"
+      source: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-h0y7hy"
+      binary: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-h0y7hy"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Ob0 /Od /RTC1"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
       CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>"
-      VCPKG_INSTALLED_DIR: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/vcpkg_installed"
-      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
-      VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "D:/vcpkg/vcpkg"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-nge39m'
+        Change Dir: 'D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-h0y7hy'
         
-        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_52d1c
-        [1/2] "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe"  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_52d1c.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_52d1c.dir\\ /FS -c "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_52d1c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_52d1c.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_52d1c.exe /implib:cmTC_52d1c.lib /pdb:cmTC_52d1c.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_64d83
+        [1/2] "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe"  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_64d83.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_64d83.dir\\ /FS -c "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_64d83.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_64d83.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_64d83.exe /implib:cmTC_64d83.lib /pdb:cmTC_64d83.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -195,127 +187,4 @@ events:
         implicit fwks: []
       
       
-...
-
----
-events:
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
-      - "D:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake:896 (_find_package)"
-      - "out/build/x64-debug/vcpkg_installed/x64-windows/share/spdlog/spdlogConfig.cmake:30 (find_package)"
-      - "D:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake:896 (_find_package)"
-      - "CMakeLists.txt:17 (find_package)"
-    checks:
-      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
-    directories:
-      source: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-yucenn"
-      binary: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-yucenn"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
-      CMAKE_C_FLAGS_DEBUG: "/MDd /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>"
-      VCPKG_INSTALLED_DIR: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/vcpkg_installed"
-      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
-      VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "D:/vcpkg/vcpkg"
-    buildResult:
-      variable: "CMAKE_HAVE_LIBC_PTHREAD"
-      cached: true
-      stdout: |
-        Change Dir: 'D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-yucenn'
-        
-        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_5e938
-        [1/2] "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe"  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /W3  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_5e938.dir\\src.c.obj /FdCMakeFiles\\cmTC_5e938.dir\\ /FS -c D:\\webGL-fpsgame\\game-server-CMake\\out\\build\\x64-debug\\CMakeFiles\\CMakeScratch\\TryCompile-yucenn\\src.c
-        FAILED: CMakeFiles/cmTC_5e938.dir/src.c.obj 
-        "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe"  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /W3  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_5e938.dir\\src.c.obj /FdCMakeFiles\\cmTC_5e938.dir\\ /FS -c D:\\webGL-fpsgame\\game-server-CMake\\out\\build\\x64-debug\\CMakeFiles\\CMakeScratch\\TryCompile-yucenn\\src.c
-        D:\\webGL-fpsgame\\game-server-CMake\\out\\build\\x64-debug\\CMakeFiles\\CMakeScratch\\TryCompile-yucenn\\src.c(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
-        ninja: build stopped: subcommand failed.
-        
-      exitCode: 1
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:175 (_threads_check_lib)"
-      - "D:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake:896 (_find_package)"
-      - "out/build/x64-debug/vcpkg_installed/x64-windows/share/spdlog/spdlogConfig.cmake:30 (find_package)"
-      - "D:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake:896 (_find_package)"
-      - "CMakeLists.txt:17 (find_package)"
-    checks:
-      - "Looking for pthread_create in pthreads"
-    directories:
-      source: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-11a5iw"
-      binary: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-11a5iw"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
-      CMAKE_C_FLAGS_DEBUG: "/MDd /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>"
-      VCPKG_INSTALLED_DIR: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/vcpkg_installed"
-      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
-      VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "D:/vcpkg/vcpkg"
-    buildResult:
-      variable: "CMAKE_HAVE_PTHREADS_CREATE"
-      cached: true
-      stdout: |
-        Change Dir: 'D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-11a5iw'
-        
-        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_2a607
-        [1/2] "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe"  /nologo   /DWIN32 /D_WINDOWS /W3 -DCHECK_FUNCTION_EXISTS=pthread_create /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_2a607.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_2a607.dir\\ /FS -c D:\\webGL-fpsgame\\game-server-CMake\\out\\build\\x64-debug\\CMakeFiles\\CMakeScratch\\TryCompile-11a5iw\\CheckFunctionExists.c
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_2a607.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_2a607.dir\\CheckFunctionExists.c.obj  /out:cmTC_2a607.exe /implib:cmTC_2a607.lib /pdb:cmTC_2a607.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_2a607.exe 
-        C:\\Windows\\system32\\cmd.exe /C "cd . && "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_2a607.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_2a607.dir\\CheckFunctionExists.c.obj  /out:cmTC_2a607.exe /implib:cmTC_2a607.lib /pdb:cmTC_2a607.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_2a607.dir\\CheckFunctionExists.c.obj /out:cmTC_2a607.exe /implib:cmTC_2a607.lib /pdb:cmTC_2a607.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_2a607.dir/intermediate.manifest CMakeFiles\\cmTC_2a607.dir/manifest.res" failed (exit code 1104) with the following output:
-        LINK : fatal error LNK1104: 无法打开文件“pthreads.lib”\x0d
-        ninja: build stopped: subcommand failed.
-        
-      exitCode: 1
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
-      - "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:176 (_threads_check_lib)"
-      - "D:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake:896 (_find_package)"
-      - "out/build/x64-debug/vcpkg_installed/x64-windows/share/spdlog/spdlogConfig.cmake:30 (find_package)"
-      - "D:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake:896 (_find_package)"
-      - "CMakeLists.txt:17 (find_package)"
-    checks:
-      - "Looking for pthread_create in pthread"
-    directories:
-      source: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-pvlpsv"
-      binary: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-pvlpsv"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
-      CMAKE_C_FLAGS_DEBUG: "/MDd /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>"
-      VCPKG_INSTALLED_DIR: "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/vcpkg_installed"
-      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
-      VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "D:/vcpkg/vcpkg"
-    buildResult:
-      variable: "CMAKE_HAVE_PTHREAD_CREATE"
-      cached: true
-      stdout: |
-        Change Dir: 'D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-pvlpsv'
-        
-        Run Build Command(s): "D:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_30f73
-        [1/2] "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe"  /nologo   /DWIN32 /D_WINDOWS /W3 -DCHECK_FUNCTION_EXISTS=pthread_create /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_30f73.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_30f73.dir\\ /FS -c D:\\webGL-fpsgame\\game-server-CMake\\out\\build\\x64-debug\\CMakeFiles\\CMakeScratch\\TryCompile-pvlpsv\\CheckFunctionExists.c
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_30f73.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_30f73.dir\\CheckFunctionExists.c.obj  /out:cmTC_30f73.exe /implib:cmTC_30f73.lib /pdb:cmTC_30f73.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_30f73.exe 
-        C:\\Windows\\system32\\cmd.exe /C "cd . && "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_30f73.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_30f73.dir\\CheckFunctionExists.c.obj  /out:cmTC_30f73.exe /implib:cmTC_30f73.lib /pdb:cmTC_30f73.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_30f73.dir\\CheckFunctionExists.c.obj /out:cmTC_30f73.exe /implib:cmTC_30f73.lib /pdb:cmTC_30f73.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_30f73.dir/intermediate.manifest CMakeFiles\\cmTC_30f73.dir/manifest.res" failed (exit code 1104) with the following output:
-        LINK : fatal error LNK1104: 无法打开文件“pthread.lib”\x0d
-        ninja: build stopped: subcommand failed.
-        
-      exitCode: 1
 ...

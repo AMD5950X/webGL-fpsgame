@@ -16,7 +16,7 @@
 <script setup >
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const wsUrl = 'ws://localhost:9001'
+const wsUrl = 'ws://47.76.122.60:9001'
 const ws = ref(null)
 const connected = ref(false)
 const input = ref('')

@@ -1,2 +1,0 @@
-#pragma code_page(65001)
-1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "D:/webGL-fpsgame/game-server-CMake/out/build/x64-debug/CMakeFiles/game-server-CMake.dir/embed.manifest"
