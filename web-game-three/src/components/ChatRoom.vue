@@ -157,7 +157,9 @@ const handlePongMessage = (data: any) => {
 const connectWebSocket = () => {
   try {
     connectionStatus.value = 'connecting'
-    socket.value = new WebSocket('ws://47.76.122.60:9001')
+    // 从环境变量读取WebSocket URL，如果没有则使用默认值
+    const wsUrl = import.meta.env.VITE_WEBSOCKET_URL || 'ws://47.76.122.60:9001'
+    socket.value = new WebSocket(wsUrl)
     
     socket.value.onopen = () => {
       isConnected.value = true
@@ -284,6 +286,11 @@ onMounted(() => {
 onUnmounted(() => {
   stopPingTest()
   if (socket.value) {
+    // 移除事件监听器后再关闭连接
+    socket.value.onopen = null
+    socket.value.onmessage = null
+    socket.value.onclose = null
+    socket.value.onerror = null
     socket.value.close()
   }
 })

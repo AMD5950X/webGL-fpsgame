@@ -1,14 +1,21 @@
 {
-  "name": "web-game-three",
+  "name": "webgl-fps-game",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000"
   },
   "dependencies": {
+    "@babylonjs/core": "^8.26.1",
+    "@babylonjs/loaders": "^8.26.1",
+    "@babylonjs/materials": "^8.26.1",
+    "@babylonjs/serializers": "^8.26.1",
+    "cannon": "^0.6.1",
+    "router": "^2.2.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
@@ -18,5 +25,15 @@
     "typescript": "~5.8.3",
     "vite": "^7.1.2",
     "vue-tsc": "^3.0.5"
-  }
+  },
+  "description": "一个基于 Babylon.js 和 Vue 3 构建的 3D 第一人称射击游戏",
+  "keywords": [
+    "WebGL",
+    "FPS",
+    "Babylon.js",
+    "Vue 3",
+    "3D Game",
+    "Multiplayer"
+  ],
+  "author": "WebGL FPS Game Team"
 }

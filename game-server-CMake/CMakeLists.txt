@@ -11,16 +11,29 @@ endif()
 
 project ("game-server-CMake")
 
+# 包含 vcpkg 工具链文件以使用 vcpkg 安装的包
+
 include(\\root\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake)
 
 # 将源代码添加到此项目的可执行文件。
+
 add_executable (game-server-CMake "game-server-CMake.cpp" "game-server-CMake.h")
+
+# 引入 spdlog
 
 find_package(spdlog CONFIG REQUIRED)
 target_link_libraries(game-server-CMake PRIVATE spdlog::spdlog)
 
+# 引入 高性能uWebSockets
+
 find_package(unofficial-uwebsockets CONFIG REQUIRED)
 target_link_libraries(game-server-CMake PRIVATE unofficial::uwebsockets::uwebsockets)
+
+
+# 引入 redis++
+
+find_package(redis++ CONFIG REQUIRED)
+target_link_libraries(game-server-CMake PRIVATE redis++::redis++_static)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET game-server-CMake PROPERTY CXX_STANDARD 20)

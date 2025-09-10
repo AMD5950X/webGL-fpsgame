@@ -45,9 +45,8 @@
   },
   "ExpandedNodes": [
     "",
-    "\\out",
-    "\\out\\build"
+    "\\out"
   ],
-  "SelectedNode": "\\CMakeLists.txt",
+  "SelectedNode": "\\vcpkg.json",
   "PreviewInSolutionExplorer": false
 }

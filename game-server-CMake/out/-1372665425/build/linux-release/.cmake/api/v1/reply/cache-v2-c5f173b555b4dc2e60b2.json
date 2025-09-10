@@ -1127,10 +1127,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "The CMake toolchain file"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/root/vcpkg/scripts/buildsystems/vcpkg.cmake"
 		},
 		{
@@ -1476,6 +1476,30 @@
 			],
 			"type" : "STATIC",
 			"value" : "/root/.vs/game-server-CMake"
+		},
+		{
+			"name" : "hiredis_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for hiredis."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/root/.vs/game-server-CMake/out/build/linux-release/vcpkg_installed/x64-linux/share/hiredis"
+		},
+		{
+			"name" : "redis++_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for redis++."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/root/.vs/game-server-CMake/out/build/linux-release/vcpkg_installed/x64-linux/share/redis++"
 		},
 		{
 			"name" : "spdlog_DIR",

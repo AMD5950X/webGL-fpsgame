@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import ChatRoom from './components/ChatRoom.vue'
+// App.vue 不再直接导入组件，而是使用路由
 </script>
 
 <template>
   <div id="app">
-    <header>
-      <h1>🎮 WebGL FPS Game - Chat Demo</h1>
-      <p>前后端通信测试</p>
-    </header>
-    <main>
-      <ChatRoom />
-    </main>
+    <router-view />
   </div>
 </template>
 

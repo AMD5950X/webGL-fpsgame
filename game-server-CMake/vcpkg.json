@@ -1,6 +1,7 @@
 ﻿{
 	"dependencies": [
 		"spdlog",
-		"uwebsockets"
+		"uwebsockets",
+		"redis-plus-plus"
 	]
 }
