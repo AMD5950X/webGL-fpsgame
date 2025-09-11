@@ -1,42 +1,38 @@
 <template>
   <div class="home-container">
     <div class="hero">
-      <h1>🎮 WebGL FPS Game</h1>
-      <p>一个基于 Babylon.js 构建的 3D 第一人称射击游戏</p>
+      <h1>🎮 Babylon.js 物理引擎演示</h1>
+      <p>一个基于 Babylon.js 和 Cannon.js 的物理引擎演示</p>
       <div class="cta-buttons">
-        <button @click="startSinglePlayer" class="btn primary">单人游戏</button>
-        <button @click="startMultiplayer" class="btn secondary">多人游戏</button>
-        <button @click="openChat" class="btn tertiary">聊天室</button>
-        <button @click="testGame" class="btn quaternary">测试游戏</button>
-        <button @click="simpleTest" class="btn quinary">简单测试</button>
-        <button @click="simpleFPS" class="btn senary">简化版FPS</button>
-        <button @click="babylonPhysics" class="btn septenary">Babylon物理引擎FPS</button>
+        <button @click="startPhysicsDemo" class="btn primary">物理引擎演示</button>
+        <button @click="startFPSGame" class="btn secondary">FPS游戏</button>
+        <button @click="startChat" class="btn tertiary">聊天室</button>
       </div>
     </div>
     
     <div class="features">
       <div class="feature-card">
-        <h3>🚀 高性能 3D 渲染</h3>
-        <p>基于 Babylon.js 引擎，提供流畅的 3D 游戏体验</p>
+        <h3>🚀 物理引擎功能</h3>
+        <p>支持重力、碰撞检测和物理材质</p>
       </div>
       <div class="feature-card">
-        <h3>🌐 实时多人对战</h3>
-        <p>通过 WebSocket 实现低延迟多人游戏体验</p>
+        <h3>🛠️ 交互式演示</h3>
+        <p>点击场景创建物体，体验不同物理效果</p>
       </div>
       <div class="feature-card">
-        <h3>🎯 丰富的游戏机制</h3>
-        <p>包含射击、移动、跳跃等完整的 FPS 游戏功能</p>
+        <h3>⚙️ 可配置选项</h3>
+        <p>可切换不同形状和物理材质</p>
       </div>
     </div>
     
     <div class="instructions">
-      <h2>游戏说明</h2>
+      <h2>使用说明</h2>
       <ul>
-        <li>WASD 键控制移动</li>
-        <li>鼠标控制视角</li>
-        <li>左键射击</li>
-        <li>R 键重新装弹</li>
-        <li>空格键跳跃</li>
+        <li>点击场景创建物理对象</li>
+        <li>选择不同的形状（球体、立方体、圆柱体）</li>
+        <li>选择不同的物理材质（默认、弹性、重型）</li>
+        <li>点击"清除所有物体"按钮重置场景</li>
+        <li>点击"切换重力"按钮开启/关闭重力效果</li>
       </ul>
     </div>
   </div>
@@ -47,32 +43,16 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const startSinglePlayer = () => {
-  router.push('/game')
+const startPhysicsDemo = () => {
+  router.push('/physics')
 }
 
-const startMultiplayer = () => {
-  router.push('/game?mode=multiplayer')
+const startFPSGame = () => {
+  router.push('/fps')
 }
 
-const openChat = () => {
-  router.push('/chat')
-}
-
-const testGame = () => {
-  router.push('/test')
-}
-
-const simpleTest = () => {
-  router.push('/simple')
-}
-
-const simpleFPS = () => {
-  router.push('/simplefps')
-}
-
-const babylonPhysics = () => {
-  router.push('/babylonphysics')
+const startChat = () => {
+  router.push('/fps') // 聊天功能集成在FPS游戏中
 }
 </script>
 
@@ -147,30 +127,6 @@ const babylonPhysics = () => {
   background: linear-gradient(90deg, #4A00E0, #8E2DE2);
   color: white;
   box-shadow: 0 4px 15px rgba(142, 45, 226, 0.3);
-}
-
-.btn.quaternary {
-  background: linear-gradient(90deg, #ffa726, #ff7043);
-  color: white;
-  box-shadow: 0 4px 15px rgba(255, 167, 38, 0.3);
-}
-
-.btn.quinary {
-  background: linear-gradient(90deg, #ab47bc, #7b1fa2);
-  color: white;
-  box-shadow: 0 4px 15px rgba(171, 71, 188, 0.3);
-}
-
-.btn.senary {
-  background: linear-gradient(90deg, #26a69a, #00897b);
-  color: white;
-  box-shadow: 0 4px 15px rgba(38, 166, 154, 0.3);
-}
-
-.btn.septenary {
-  background: linear-gradient(90deg, #5c6bc0, #3949ab);
-  color: white;
-  box-shadow: 0 4px 15px rgba(92, 107, 192, 0.3);
 }
 
 .btn:hover {

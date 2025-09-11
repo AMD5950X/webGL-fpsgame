@@ -10,16 +10,18 @@
     "serve": "vite preview --port 3000"
   },
   "dependencies": {
-    "@babylonjs/core": "^8.26.1",
-    "@babylonjs/loaders": "^8.26.1",
+    "@babylonjs/core": "^8.26.2",
+    "@babylonjs/loaders": "^8.26.2",
     "@babylonjs/materials": "^8.26.1",
     "@babylonjs/serializers": "^8.26.1",
-    "cannon": "^0.6.1",
+    "babylonjs": "^8.26.2",
+    "cannon": "^0.6.2",
     "router": "^2.2.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@types/cannon": "^0.1.13",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.8.3",
